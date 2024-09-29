@@ -5,7 +5,8 @@ export default {
   collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}"],
   testEnvironment: "jsdom",
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "ts-jest",
+    "^.+\\.(js|jsx|ts|tsx)$": ["ts-jest"],
+    ".+\\.(css|styl|less|sass|scss)$": ["jest-css-modules-transform"],
   },
   transformIgnorePatterns: ["node_modules/(?!variables/.*)"],
   setupFilesAfterEnv: ["<rootDir>/internal/jest.setup.ts"],
