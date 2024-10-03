@@ -43,3 +43,14 @@ export function setFieldValueAt(
   row?.set(position.col, value);
   return newField;
 }
+
+export function getFieldValueAt(
+  field: Field,
+  position: FieldPosition
+): FieldRowValue {
+  const value = field.get(position.row)?.get(position.col);
+  if (value === undefined) {
+    throw new Error("Accessing wrong coords");
+  }
+  return value;
+}

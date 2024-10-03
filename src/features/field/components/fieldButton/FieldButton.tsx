@@ -3,7 +3,11 @@ import styles from "./FieldButton.module.scss";
 // import "./test.css";
 export type FieldButtonProps = {} & React.ComponentPropsWithoutRef<"button">;
 
-export function FieldButton({ ...rest }: FieldButtonProps) {
+export function FieldButton({ children, ...rest }: FieldButtonProps) {
   // return <button className="button" {...rest}></button>;
-  return <button className={styles.fieldButton} {...rest}></button>;
+  return (
+    <button className={styles.fieldButton} {...rest}>
+      {children}
+    </button>
+  );
 }
